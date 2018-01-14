@@ -66,7 +66,7 @@ public class PPTCreateDAO {
 				title1 = slide1.getPlaceholder(1);
 				content1 = slide1.getPlaceholder(0);
 			}
-			title1.setText(userID+"의 포토폴리오");
+			title1.setText(userID+"의 포트폴리오");
 			content1.setText(" ");
 		
 			int cnt = 0; // For check count
