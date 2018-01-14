@@ -1,0 +1,95 @@
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+
+#main_section input.txt
+{ 
+  outline: 0;
+  background: #f2f2f2;
+  width: 100%;
+  border: 0;
+  padding: 15px;
+  position: relative;
+  max-width: 300px;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-size: 14px;
+font-family:'Nanum Gothic', serif;
+}
+textarea
+{
+
+  outline: 0;
+  background: #f2f2f2;
+  border: 0;
+  padding: 15px;
+  position: relative;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-size: 14px;
+font-family:'Nanum Gothic', serif;
+	
+}
+#main_section input.day
+{
+
+  outline: 0;
+  background: #f2f2f2;
+  width: 100%;
+  border: 0;
+  padding: 15px;
+  position: relative;
+  max-width: 200px;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-size: 14px;
+font-family:'Nanum Gothic', serif;
+}
+
+select
+{
+
+  outline: 0;
+  background: #f2f2f2;
+  width: 100%;
+  border: 0;
+  padding: 15px;
+  position: relative;
+  max-width: 200px;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-size: 14px;
+font-family:'Nanum Gothic', serif;
+}
+
+#main_section input.fil
+{
+
+  outline: 0;
+  background: #f2f2f2;
+  border: 0;
+  width:300px;
+  position: relative;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-size: 14px;
+font-family:'Nanum Gothic', serif;
+}
