@@ -127,18 +127,18 @@
 			<titlefont>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;활동 summary</titlefont><br><br>
 			
 			&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
-			<input maxlength="100" name="actSummary" class="txt" type="text" value="<%=activity.getActSummary()%>" onblur="inputLengthCheck(this);"><br>
+			<textarea maxlength="100" name="actSummary" class="txt" rows="5" cols="50" value="<%=activity.getActSummary()%>"><%=activity.getActSummary()%></textarea><br>
           
 			<br><br><br><br>
 
 			<titlefont>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;활동 내용</titlefont><br><br>
 			&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
-			<textarea maxlength="1000" name="actContent" rows="6" cols="50" placeholder="Description"><%if(activity.getActContent()!=null)%><%=activity.getActContent()%></textarea>
+			<textarea maxlength="1000" name="actContent" rows="30" cols="100" placeholder="Description"><%if(activity.getActContent()!=null)%><%=activity.getActContent()%></textarea>
 			<br><br><br><br>
 
 			<titlefont>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;활동 결과</titlefont><br><br>
 			&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
-			<textarea maxlength="1000" name="actResult" rows="6" cols="50" placeholder="Description"><%if(activity.getActResult()!=null)%><%=activity.getActResult()%></textarea>
+			<textarea maxlength="1000" name="actResult" rows="20" cols="100" placeholder="Description"><%if(activity.getActResult()!=null)%><%=activity.getActResult()%></textarea>
 			<br><br><br><br>
 	
 			<titlefont>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;진행 상태</titlefont><br><br>
