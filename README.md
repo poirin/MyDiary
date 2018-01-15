@@ -24,7 +24,7 @@ My Diary is a web service that helps users manage their portfolio. Users can acc
 # Development Environment
 - Language : Java, Javascript, jsp, html, css, sql<br>
 - Develop Environment	: eclipse, apache tomcat, mysql, JDK<br>
-- server : Cafe24<br>
+- Server : Cafe24<br>
 - OS : Window10, Linux<br>
 - API : Apache POI (for PPT create), JDBC
 
