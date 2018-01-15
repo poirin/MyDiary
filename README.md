@@ -11,4 +11,6 @@ My Diary는 사용자가 자신의 포트폴리오를 관리할 수 있도록 �
 
 # 사용한 라이브러리
 
-Apache-POI<br><br>JDBC
+Apache-POI : https://poi.apache.org/<br><br>
+
+JDBC : https://www.mysql.com/
