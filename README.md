@@ -1,21 +1,20 @@
 
 # MyDiary
 
-My Diary는 사용자가 자신의 포트폴리오를 관리할 수 있도록 도와주는 웹 서비스입니다. 사용자는 회원가입을 통해 해당 서비스를 이용할 수 있으며 자신의 다양한 활동(공모전, 프로젝트, 봉사활동 등)을 기록, 저장하고 관리할 수 있습니다. 이 뿐만 아니라 저장된 활동들을 토대로 포트폴리오(PPT)를 서버가 생성해주며 유저가 원하는 디자인으로 자신의 포트폴리오를 자동적으로 생성할 수 있도록 도와줍니다.
+My Diary is a web service that helps users manage their portfolio. Users can access the service through membership, and can record, store and manage their various activities (competition, projects, service activities, etc.). In addition, the server generates a portfolio (PPT) based on stored activities and helps users to automatically create their own portfolios with the desired design.
 
 *Website : http://poirin.cafe24.com/
 
+# How To Use
 
-# 이용 가이드
+*데모영상 참고 : https://youtu.be/_JTFcXxqMkA
 
-*데모영상 참고 : 
-
-# 사용한 라이브러리
-
-Apache-POI : https://poi.apache.org/<br>
-
-JDBC : https://www.mysql.com/
-
+# Development Environment
+- Language : Java, Javascript, jsp, html, css, sql<br>
+- Develop Environment	: eclipse, apache tomcat, mysql, JDK<br>
+- server : cafe24<br>
+- OS : Window10, Linux<br>
+- API : Apache poi (for PPT create)
 # 시스템 구조
 ![flow](https://user-images.githubusercontent.com/34126806/34925292-5b681a26-f9a0-11e7-9363-f70ce49bcdc6.png)
 
