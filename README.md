@@ -17,7 +17,7 @@ Apache-POI : https://poi.apache.org/<br>
 JDBC : https://www.mysql.com/
 
 # 시스템 구조
-
+![flow](https://user-images.githubusercontent.com/34126806/34925292-5b681a26-f9a0-11e7-9363-f70ce49bcdc6.png)
 
 # LICENSE
 MIT
