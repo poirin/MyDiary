@@ -4,8 +4,11 @@ My Diary는 사용자가 자신의 포트폴리오를 관리할 수 있도록 �
 
 *Website : http://poirin.cafe24.com/
 
-*Demo : 
 
+# 이용 가이드
 
-# How To Use?
+*데모영상 참고 : 
 
+# 사용한 라이브러리
+
+Apache-POI<br><br>JDBC
