@@ -25,7 +25,7 @@ public class PPTCreateDAO {
 		try {
 			String dbURL = "jdbc:mysql://poirin.cafe24.com/poirin";
 			String dbID = "poirin";
-			String dbPassword="asdf92092809!";
+			String dbPassword=""; //please input password
 			Class.forName("com.mysql.jdbc.Driver");
 			conn = DriverManager.getConnection(dbURL, dbID, dbPassword);
 			
