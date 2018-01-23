@@ -24,7 +24,7 @@ public class ActivityDAO {
 			
 			String dbURL = "jdbc:mysql://poirin.cafe24.com/poirin";
 			String dbID ="poirin";
-			String dbPassword ="asdf92092809!";
+			String dbPassword =""; //please input password
 			/*
 			
 			String dbURL = "jdbc:mysql://localhost:3306/mydiary";
