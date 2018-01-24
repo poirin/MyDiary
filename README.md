@@ -28,6 +28,10 @@ My Diary is a web service that helps users manage their portfolio. Users can acc
 - OS : Window10, Linux<br>
 - API : Apache POI (for PPT create), JDBC
 
+# Future Plan
+- Add recommending PPT design template
+- Add creating PPT in WEB Page
+
 # LICENSE
 MIT
 
