@@ -7,7 +7,9 @@
 <html lang = "ko">
 <head>
 	<meta charset="utf-8" content="text/html" http-equiv="Content-Type">
-	
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
 	<script src="http://code.jquery.com/jquery-latest.js"></script>
 	<link rel="stylesheet" href="css/frame.css?v=3">
 	<link rel="stylesheet" href="css/inputlayout.css?v=1">
@@ -106,22 +108,36 @@
 	
 	
 	
-	<div id="main_section">
-			
+	<div id="main_section">	
 			<%
 				for(int i=0; i<list.size(); i++) {
 			%>
-			<div onclick="location.href='modify.jsp?actNum=<%=list.get(i).getActNum()%>'" id="activity_list"> 
-				<a href="jsp/deleteAction.jsp?actNum=<%=list.get(i).getActNum()%>" class="delete" style="text-decoration:none"></a>
-				<div id="activity-cont">
-					<h1><%= list.get(i).getActName()%></h1><br>
-					<h2><%= list.get(i).getActType()%></h2>
-					<p><%= list.get(i).getActSummary()%></p> 
-				</div>
+			
+			
+		
+	
+
+			
+	
+
+		    <div class="thumbnail">
+		      <div class="caption">
+		        <h3><%= list.get(i).getActName()%></h3>
+		        <p ><%= list.get(i).getActSummary()%></p>
+		      </div>
+		      <div class="thum-btn">
+		      	<p><a href="modify.jsp?actNum=<%=list.get(i).getActNum()%>" class="btn btn-primary" role="button">modify</a> 
+		       	<a href="jsp/deleteAction.jsp?actNum=<%=list.get(i).getActNum()%>" class="btn btn-default" role="button">delete</a></p>
+		       </div>
 			</div>
+			
+			
+			
+			
 			<%
 				}
 			%>
+	
 	</div>
 	
 	<div class="dim-layer">
@@ -148,6 +164,8 @@
 
 	<script src="js/index.js?v=2"></script>
 	<script src="js/checklength.js"></script>	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    	<script src="js/bootstrap.min.js"></script>
 </div>
 </body>
 </html>

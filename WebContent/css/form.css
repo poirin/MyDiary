@@ -27,8 +27,11 @@ titlefont{
 	word-break:break-all;
 }
 
+.caption{
+	height :250px;
+}
 
-#activity-cont p { 
+.caption p { 
 	color: #bbc3c8; 
 	font-family: 'Helvetica Neue', sans-serif; 
 	font-size: 14px; 
