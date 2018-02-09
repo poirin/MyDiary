@@ -17,8 +17,8 @@ Thumbs.db
 
 .metadata
 bin/
-tmp/
 build/
+tmp/
 *.tmp
 *.bak
 *.swp

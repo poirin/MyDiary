@@ -3,7 +3,7 @@
 <%@ page import="pptcreate.PPTCreateDAO" %>
 <%@ page import="java.io.PrintWriter"%>
 <% request.setCharacterEncoding("UTF-8"); %>
-<jsp:useBean id="pptcreate" class="pptcreate.PPTCreate" scope="page" />
+<jsp:useBean id="pptcreate" class="user.User" scope="page" />
 <jsp:setProperty name="pptcreate" property="userID" />
 <!DOCTYPE html>
 <html>
