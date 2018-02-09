@@ -71,7 +71,7 @@
 			<%
 				for(int i=0; i<yearList.size(); i++) {
 			%>
-				<li class="menu"> <a href="#" style="text-decoration:none"> <%=yearList.get(i) %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="badge"><%=list.size() %></span></a>
+				<li class="menu"> <a href="#" style="text-decoration:none"> <%=yearList.get(i) %><span class="badge"><%=list.size() %></span></a>
 				
 					<ul class="yearlist">
 					<%

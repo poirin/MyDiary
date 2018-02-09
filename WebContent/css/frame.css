@@ -41,7 +41,7 @@ box-shadow:0 1px 1px #ccc;
    height:         calc(100% - 80px);
 }
 #main_section {
-	padding : 25px;
+
    overflow:auto;
    float:left;
    width: -webkit-calc(100% - 280px);
@@ -110,18 +110,19 @@ box-shadow:0 1px 1px #ccc;
   a.btn-layerClose {
 	display: inline-block;
 	height: 25px;
-	width : 40px;
+	width : 70px;
 	text-align: center;
 	padding: 0 14px 0;
 	background-color: #faa1a1;
 	font-size: 18px;
 	color: #fff;
+	width:100px;
 	
   }
   a.btn-layerAdd {
 	display: inline-block;
 	height: 25px;
-	width : 40px;
+	width : 70px;
 	text-align: center;
 	padding: 0 14px 0;
 	background-color: #faa1a1;

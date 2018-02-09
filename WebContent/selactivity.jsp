@@ -7,6 +7,9 @@
 <html lang = "ko">
 <head>
 	<meta charset="utf-8" content="text/html" http-equiv="Content-Type">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="css/inputlayout.css?v=1">
 	<link rel="stylesheet" href="css/button.css?v=1">
 	<link rel="stylesheet" href="css/form.css?v=1">
@@ -53,7 +56,7 @@
 				ArrayList<String> yearList = activityDAO.getYear((String) session.getAttribute("userID"));
 				for(int i=0; i<yearList.size(); i++) {
 			%>
-				<li class="menu"> <a href="#"><%=yearList.get(i) %></a>
+				<li class="menu"> <a href="#"><%=yearList.get(i) %><span class="badge"><%=list.size() %></span></a>
 					<ul class="yearlist">
 					<%
 						for(int j=0; j<list.size(); j++) {
@@ -87,20 +90,21 @@
 					
 	</div>
 </div>
+
 	<div id="main_section">
 		<form id="checkform" method="get" action="jsp/makePPT.jsp" name="chkform">
 		<div id="activity_form">
 			<%
 				for(int i=0; i<list.size(); i++) {
 			%>
-			<div id="activity_list"> 
-				<input type="checkbox" name="check" style="width:24px;height:24px;" value="<%= list.get(i).getActNum()%>" checked>
-				<div id="activity-cont">
-					<h1><%= list.get(i).getActName()%></h1><br>
-					<h2><%= list.get(i).getActType()%></h2>
-					<p><%= list.get(i).getActSummary()%></p> 
-				</div>
+			<div class="thumbnail">
+			<input type="checkbox" name="check" style="width:24px;height:24px;" value="<%= list.get(i).getActNum()%>" checked>
+		      <div class="caption">
+		        <h3><%= list.get(i).getActName()%></h3>
+		        <p ><%= list.get(i).getActSummary()%></p>
+		      </div>
 			</div>
+			
 			<%
 				}
 			%>
@@ -132,7 +136,8 @@
 	</div>
 
 	<script src="js/index.js?v=2"></script>
-	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
 </div>
 </body>
 </html>
