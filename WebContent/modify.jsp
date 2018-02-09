@@ -7,7 +7,10 @@
 <html lang = "ko">
 <head>
 	<meta charset="utf-8" content="text/html" http-equiv="Content-Type">
-	<link rel="stylesheet" href="css/frame.css?v=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="css/frame.css?v=2">
 	<link rel="stylesheet" href="css/button.css?v=1">
 	<link rel="stylesheet" href="css/inputlayout.css?v=1">
 	<link rel="stylesheet" href="css/form.css?v=1">
@@ -102,58 +105,77 @@
 		Activity activity = new ActivityDAO().getActivity(userID,actNum);
 	%>
 	<div id="main_section">
-		<form action="jsp/modifyAction.jsp?actNum=<%=actNum%>" method="post" id="modify_form">
-			<br><br>
-			<titlefont>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;활동 종류</titlefont><br><br>
-			&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
-			<input maxlength="24" name="actType" class="txt" type="text" value="<%=activity.getActType()%>" onblur="inputLengthCheck(this);" required><br>
-          	
-			<br><br><br><br>		
+		<form action="jsp/modifyAction.jsp?actNum=<%=actNum%>" method="post" id="modify_form" class="form-horizontal ">
+		
+			<div class="form-group">
+				<label class="col-sm-2 control-label">Activity Type</label>
+				<div class="col-md-6">
+					<input maxlength="24" name="actType" class="form-control" type="text" value="<%=activity.getActType()%>" onblur="inputLengthCheck(this);" required><br>
+				</div>
+          	</div>	
  
-			<titlefont>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;활동 이름</titlefont><br><br>
-			
-			&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
-			<input maxlength="19" name="actName" class="txt" type="text" value="<%=activity.getActName()%>" onblur="inputLengthCheck(this);" required><br>
-         
-			<br><br><br><br>
+			<div class="form-group">
+				<label class="col-sm-2 control-label">Activity Name</label>
+				<div class="col-md-6">
+					<input maxlength="19" name="actName" class="form-control" type="text" value="<%=activity.getActName()%>" onblur="inputLengthCheck(this);" required><br>
+				</div>
+			</div>
 
-			<titlefont>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;활동 기간</titlefont><br><br>
-			&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
-			<input name="startDate" class="day" type="date" value="<%=activity.getStartDate()%>"> 
-			~ 
-			<input name="endDate" class="day" type="date" value="<%=activity.getEndDate()%>">
-			<br><br><br><br>
 
-			<titlefont>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;활동 summary</titlefont><br><br>
-			
-			&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
-			<textarea maxlength="100" name="actSummary" class="txt" rows="5" cols="50" value="<%=activity.getActSummary()%>"><%=activity.getActSummary()%></textarea><br>
-          
-			<br><br><br><br>
+			<div class="form-group">
+				<label class="col-sm-2 control-label">Activity Date</label>
+				<div class="col-sm-10">
+					<div class="date-line">
+						<input name="startDate" class="form-control" type="date" value="<%=activity.getStartDate()%>">
+					</div> 
+					<div class="date-line">
+						<p>~</p>
+					</div>
+					<div class="date-line">
+						<input name="endDate" class="form-control" type="date" value="<%=activity.getEndDate()%>">
+					</div>
+				</div>
+			</div><br>
 
-			<titlefont>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;활동 내용</titlefont><br><br>
-			&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
-			<textarea maxlength="1000" name="actContent" rows="30" cols="100" placeholder="Description"><%if(activity.getActContent()!=null)%><%=activity.getActContent()%></textarea>
-			<br><br><br><br>
 
-			<titlefont>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;활동 결과</titlefont><br><br>
-			&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
-			<textarea maxlength="1000" name="actResult" rows="20" cols="100" placeholder="Description"><%if(activity.getActResult()!=null)%><%=activity.getActResult()%></textarea>
-			<br><br><br><br>
+			<div class="form-group">
+				<label class="col-sm-2 control-label">Activity Summary</label>
+				<div class="col-sm-10">
+					<textarea class="form-control" maxlength="100" name="actSummary" class="form-control" rows="5" cols="50" value="<%=activity.getActSummary()%>"><%=activity.getActSummary()%></textarea><br>
+				</div>
+			</div>
+           	<br>
+
+
+			<div class="form-group">
+				<label class="col-sm-2 control-label">Activity Contents</label>
+				<div class="col-sm-10">
+					<textarea class="form-control" maxlength="1000" name="actContent" rows="30" cols="100" placeholder="Description"><%if(activity.getActContent()!=null)%><%=activity.getActContent()%></textarea>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label class="col-sm-2 control-label">Activity Result</label>
+				<div class="col-sm-10">
+					<textarea class="form-control" maxlength="1000" name="actResult" rows="20" cols="100" placeholder="Description"><%if(activity.getActResult()!=null)%><%=activity.getActResult()%></textarea>
+				</div>
+			</div>
 	
-			<titlefont>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;진행 상태</titlefont><br><br>
-			&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
-			<select name="actStatus">
-				<option value="<%if(activity.getActStatus()==null||activity.getActStatus().equals("선택")){%>선택<%}else if(activity.getActStatus().equals("완료됨")||activity.getActStatus().equals("진행중")||activity.getActStatus().equals("예정")){%><%=activity.getActStatus()%><%}else{%>선택<%}%>" selected="selected"><%if(activity.getActStatus()!=null)%><%=activity.getActStatus()%></option>
-				<option value="완료됨">완료됨</option>
-				<option value="진행중">진행중</option>
-				<option value="예정">예정</option>
-			</select>
-			<br><br><br><br>	
+			<div class="form-group">
+				<label class="col-sm-2 control-label">Activity Name</label>
+				<div class="col-sm-10">
+					<select class="form-control" name="actStatus">
+						<option value="<%if(activity.getActStatus()==null||activity.getActStatus().equals("선택")){%>선택<%}else if(activity.getActStatus().equals("완료됨")||activity.getActStatus().equals("진행중")||activity.getActStatus().equals("예정")){%><%=activity.getActStatus()%><%}else{%>선택<%}%>" selected="selected"><%if(activity.getActStatus()!=null)%><%=activity.getActStatus()%></option>
+						<option value="완료됨">완료됨</option>
+						<option value="진행중">진행중</option>
+						<option value="예정">예정</option>
+					</select>
+				</div>
+			</div>	
 			
 			<div id="btn-modify">
-				<a href="main.jsp" class="Button">취소</a>
-				<a href="#" onclick="document.getElementById('modify_form').submit();" class="Button">수정</a>
+				<a href="main.jsp" class="btn btn-default">취소</a>
+				<a href="#" onclick="document.getElementById('modify_form').submit();" class="btn btn-default">수정</a>
 			</div>
 		</form>
 	</div>
@@ -182,6 +204,8 @@
 
 	<script src="js/index.js?v=2"></script>
 	<script src="js/checklength.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
 </div>
 </body>
 </html>

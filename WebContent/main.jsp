@@ -150,7 +150,7 @@
 	<script src="js/index.js?v=2"></script>
 	<script src="js/checklength.js"></script>	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    	<script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
 </div>
 </body>
 </html>
