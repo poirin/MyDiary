@@ -60,6 +60,10 @@ box-shadow:0 1px 1px #ccc;
 	float :left;
 	margin-right:20px;
 }
+.badge
+{
+	float:right;
+}
 
 #title{
    height:50px;

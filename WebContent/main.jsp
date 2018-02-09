@@ -71,7 +71,8 @@
 			<%
 				for(int i=0; i<yearList.size(); i++) {
 			%>
-				<li class="menu"> <a href="#"><%=yearList.get(i) %></a>
+				<li class="menu"> <a href="#" style="text-decoration:none"> <%=yearList.get(i) %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="badge"><%=list.size() %></span></a>
+				
 					<ul class="yearlist">
 					<%
 						for(int j=0; j<list.size(); j++) {
@@ -90,7 +91,7 @@
 							if(start==thisyear || end==thisyear || (start!=0 && end!=0 && thisyear<end && thisyear>start))
 							{	
 								%>
-								<li ><a href="modify.jsp?actNum=<%=list.get(j).getActNum()%>">-&nbsp;&nbsp;&nbsp;&nbsp;<%=list.get(j).getActName() %></a></li>
+								<li ><a href="modify.jsp?actNum=<%=list.get(j).getActNum()%>" style="text-decoration:none">-&nbsp;&nbsp;&nbsp;&nbsp;<%=list.get(j).getActName() %></a></li>
 								<%
 							}
 						}
