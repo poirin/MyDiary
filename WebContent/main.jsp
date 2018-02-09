@@ -105,21 +105,10 @@
 	</div>
 </div>
 	
-	
-	
-	
 	<div id="main_section">	
 			<%
 				for(int i=0; i<list.size(); i++) {
 			%>
-			
-			
-		
-	
-
-			
-	
-
 		    <div class="thumbnail">
 		      <div class="caption">
 		        <h3><%= list.get(i).getActName()%></h3>
@@ -131,13 +120,9 @@
 		       </div>
 			</div>
 			
-			
-			
-			
 			<%
 				}
 			%>
-	
 	</div>
 	
 	<div class="dim-layer">
