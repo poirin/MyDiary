@@ -1,4 +1,4 @@
-﻿﻿package pptcreate;
+﻿package pptcreate;
 
 import java.io.File;
 import java.io.FileOutputStream;
