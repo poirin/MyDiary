@@ -1,4 +1,4 @@
-﻿package pptcreate;
+﻿﻿package pptcreate;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -47,9 +47,7 @@ public class PPTCreateDAO {
 			pstmt.setString(1, userID);
 			rs = pstmt.executeQuery();
 			String url = designType+".pptx";
-			//XMLSlideShow ppt = new XMLSlideShow(new FileInputStream("/home/hosting_users/poirin/tomcat/webapps/ROOT/ppttheme/"+url)); //make a powerpoint
 			String path = PPTCreateDAO.class.getResource("").getPath()+"../../../";
-			System.out.println(path);
 			XMLSlideShow ppt = new XMLSlideShow(new FileInputStream(path+"ppttheme/"+url)); //make a powerpoint
 			
 			
@@ -119,14 +117,11 @@ public class PPTCreateDAO {
 				cnt++;
 			}
 
-			//File file = new File("/home/hosting_users/poirin/tomcat/webapps/ROOT/WEB-INF/Portfolio.pptx");
 			
 			File file = new File(path+"Portfolio.pptx");
-			System.out.println(file.getAbsolutePath());
 			try {
 				FileOutputStream out2 = new FileOutputStream(file);
 				ppt.write(out2);
-				System.out.println(file.getAbsolutePath() + "document created");
 				out2.close();
 				
 				return -1;
