@@ -90,7 +90,7 @@
 </div>
 	<div id="main_section">
 	<div>
-		<a href="index.html">own design</a>
+		<a href="pdfedit.jsp">own design</a>
 	</div>
 		<form id="radioform" method="get" action="selactivity.jsp" name="radform">
 		<div id="activity_form">

@@ -1,3 +1,4 @@
+﻿<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!doctype html>
 <html lang = "ko">
 <head>
@@ -18,6 +19,8 @@
     <script src="https://unpkg.com/grapesjs"></script>
     <script src="dist/grapesjs-blocks-basic.min.js"></script>
 
+    <script src="js/html2canvas.min.js"></script>
+   	<script src="https://unpkg.com/jspdf@latest/dist/jspdf.min.js"></script>
 	<style>
 	#main_section {
 
@@ -37,7 +40,7 @@
 		<h1><a href="main.jsp">MY<span>DIARY</span></a></h1>
 
 		<nav>
-			<a href="#" onclick="document.forms['radform'].submit();">Select activity</a>
+			<a href="#" onclick="document.forms['viewhtml'].submit();">Download HTML</a>
 		</nav>
 
 		<ul>
@@ -46,6 +49,7 @@
 
 	</div>
 </header>
+
 
 	<div id="main_section">
 	
@@ -94,9 +98,29 @@
     </script>
     </div>
 
+
 	<script src="js/index.js?v=2"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
 </div>
+<form method="GET" action = "jsp/makeHTML.jsp" name="viewhtml">
+	<input type = "text" id ="htmlcode" name="htmlcsscode" value="">
+</form>
+<script>
+	document.getElementById('htmlcode').value = "<!DOCTYPE html><style>"+editor.getCss()+"</style><body>"+editor.getHtml()+"</body>";
+</script>
+<script>
+    $('#download').click(function() {       
+        html2canvas(document.body, {
+            onrendered: function(canvas) {         
+                var imgData = canvas.toDataURL(
+                    'image/png');              
+                var doc = new jsPDF('p', 'mm');
+                doc.addImage(imgData, 'PNG', 10, 10);
+                doc.save('sample-file.pdf');
+            }
+        });
+    });
+    </script>
 </body>
 </html>
