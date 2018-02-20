@@ -9,7 +9,6 @@
  response.setContentType("text/html;charset=UTF-8");
 
  String filename = "Portfolio.pptx";
- //String folder = "/home/hosting_users/poirin/tomcat/webapps/ROOT/WEB-INF/";
  String folder = request.getRealPath("")+"/";
  File file = new File(folder+"Portfolio.pptx");
 

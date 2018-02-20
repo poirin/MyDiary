@@ -1,4 +1,10 @@
 ﻿<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page import="htmlcreate.HTMLCreateDAO" %>
+<%@ page import="java.io.PrintWriter"%>
+<% request.setCharacterEncoding("UTF-8"); %>
+<jsp:useBean id="htmlcreate" class="user.User" scope="page" />
+<jsp:setProperty name="htmlcreate" property="userID" />
+
 <!doctype html>
 <html lang = "ko">
 <head>
@@ -39,9 +45,9 @@
 		<h1><a href="main.jsp">MY<span>DIARY</span></a></h1>
 
 		<nav>
-			<a href="#" id ="download">Download HTML</a>
+			<!-- <a href="#" id ="download">Download HTML</a>-->
 		
-			<!--  <a href="#" onclick="document.forms['viewhtml'].submit();">Download HTML</a>-->
+			<a href="#" id = "download">Download HTML</a>
 		</nav>
 
 		<ul>
@@ -95,49 +101,24 @@
 			});
 		window.editor = editor;
     </script>
+    
+    <form method="get" action="jsp/makeHTML.jsp" name="viewhtml">
+		<input type = "hidden" name="htmlcode"/>
+	</form>
     </div>
-
 
 	<script src="js/index.js?v=2"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
 </div>
 <script>
+
 	$('#download').click(function() {
-		var iframe = document.createElement('iframe');
-		document.body.appendChild(iframe);
-	    var iframedoc = iframe.contentDocument||iframe.contentWindow.document;
-	    iframe.width = ""+(document.getElementsByClassName('gjs-frame')[0].clientWidth+70)+"px";
-		iframe.height ="0px";
-	    
-    	iframedoc.body.innerHTML = "<!DOCTYPE html><style>"+editor.getCss()+"</style><body>"+editor.getHtml()+"</body>";
-
-        html2canvas(iframedoc.body, {
-            onrendered: function(canvas) 
-            {  
-
-                var imgData = canvas.toDataURL('image/png');
-                
-                var imgWidth = 210;
-                var pageHeight = imgWidth * 1.414;
-                var imgHeight = canvas.height *imgWidth/canvas.width;
-                var heightLeft = imgHeight;
-            	var doc = new jsPDF('p', 'mm');
-            	var position = 0;
-
-                doc.addImage(imgData, 'PNG',0,position,imgWidth, imgHeight);
-                while (heightLeft >= 20) {
-                    position = heightLeft - imgHeight;
-                    doc.addPage();
-                    doc.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
-                    heightLeft -= pageHeight;
-                  }
-            	//var width = doc.internal.pageSize.width;
-                doc.save('sample-file.pdf');
-                iframe.style.display="none";
-            }
-        });
-    });
-    </script>
+	
+		document.getElementsByName("htmlcode")[0].value = "<!DOCTYPE html><style>"+editor.getCss()+"</style><body>"+editor.getHtml()+"</body>";
+		document.forms['viewhtml'].submit();
+		
+	});
+</script>
 </body>
 </html>

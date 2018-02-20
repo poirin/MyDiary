@@ -93,23 +93,23 @@
 
 	<div id="main_section">
 		<form id="checkform" method="get" action="jsp/makePPT.jsp" name="chkform">
-		<div id="activity_form">
-			<%
-				for(int i=0; i<list.size(); i++) {
-			%>
-			<div class="thumbnail">
-			<input type="checkbox" name="check" style="width:24px;height:24px;" value="<%= list.get(i).getActNum()%>" checked>
-		      <div class="caption">
-		        <h3><%= list.get(i).getActName()%></h3>
-		        <p ><%= list.get(i).getActSummary()%></p>
-		      </div>
+			<div id="activity_form">
+				<%
+					for(int i=0; i<list.size(); i++) {
+				%>
+				<div class="thumbnail">
+				<input type="checkbox" name="check" style="width:24px;height:24px;" value="<%= list.get(i).getActNum()%>" checked>
+			      <div class="caption">
+			        <h3><%= list.get(i).getActName()%></h3>
+			        <p ><%= list.get(i).getActSummary()%></p>
+			      </div>
+				</div>
+				
+				<%
+					}
+				%>
 			</div>
-			
-			<%
-				}
-			%>
-		</div>
-		<input type="hidden" name="select" value="<%=request.getParameter("select")%>">
+			<input type="hidden" name="select" value="<%=request.getParameter("select")%>">
 		</form>
 	</div>
 	
