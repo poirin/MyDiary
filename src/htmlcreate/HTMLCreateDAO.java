@@ -79,11 +79,11 @@ public class HTMLCreateDAO {
 				
 				if(rs.getString("actResult")!=null)
 				{
-					changeCode = changeCode.replaceAll("<div class=\"activityResult\">.*?</div>","");
 					changeCode = changeCode.replaceAll("<div class=\"resultDescription\">.*?</div>","<div class=\"resultDescription\">"+rs.getString("actResult")+ "</div>");
 				}
 				else
 				{
+					changeCode = changeCode.replaceAll("<div class=\"activityResult\">.*?</div>","");
 					changeCode = changeCode.replaceAll("<div class=\"resultDescription\">.*?</div>","");
 				}
 				
