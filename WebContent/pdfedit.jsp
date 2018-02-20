@@ -62,8 +62,8 @@
 	
     	<div id="gjs" style="height:0px; overflow:hidden">
     	
-		<div class="activityType">활동종류</div>
 		<div class="activityName">활동이름</div>
+		<div class="activityType">활동종류</div>
 		<div class="activityDate">활동일자</div>
 		<div class="activitySummary">활동요약</div>
 		<div class="summaryDescription">활동요약Description</div>
@@ -102,7 +102,7 @@
 		window.editor = editor;
     </script>
     
-    <form method="get" action="jsp/makeHTML.jsp" name="viewhtml">
+    <form method="post" action="jsp/makeHTML.jsp" name="viewhtml">
 		<input type = "hidden" name="htmlcode"/>
 	</form>
     </div>

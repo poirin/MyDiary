@@ -18,12 +18,11 @@
 
 	</script>
 <body>
-	
-   	<div id="header"></div>
+   	<div id="header" style="width:800px;"></div>
 	<script>
 
   	function canvas(){
-  	html2canvas(document.body, {
+  	/*html2canvas(document.body, {
           onrendered: function(canvas) {         
               var imgData = canvas.toDataURL(
                   'image/png');              
@@ -32,10 +31,8 @@
               doc.save('Portfolio.pdf');
           }
       });
-  	}
-  	setTimeout('canvas()',10);
-  	setTimeout('history.back();',1000);
-		/*html2canvas(document.body, {
+  	}*/
+		html2canvas(document.body, {
 			onrendered: function(canvas) 
 			{
 				var imgData = canvas.toDataURL('image/png');
@@ -46,6 +43,7 @@
 				var doc = new jsPDF('p', 'mm');
 				var position = 0;
 				doc.addImage(imgData, 'PNG',0,position,imgWidth, imgHeight);
+				heightLeft-=pageHeight;
 				while (heightLeft >= 20) {
 					position = heightLeft - imgHeight;
 					doc.addPage();
@@ -54,10 +52,12 @@
 				}
 				//var width = doc.internal.pageSize.width;
 				doc.save('sample-file.pdf');
-				//iframe.style.display="none";
+				
 			}
-		});*/
-		
+		});
+  	}
+	  	setTimeout('canvas()',100);
+	  	setTimeout('history.back();',1000);
 	</script>
 </body>
 </html>

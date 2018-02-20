@@ -20,7 +20,7 @@
 		
 		PrintWriter script = response.getWriter();
 		script.println("<script>");
-		script.println("function fileDown(){window.location.assign(\"downPDF.jsp\")}");
+		script.println("function fileDown(){window.open('downPDF.jsp', '', 'width=800,height=1100');}");
 		script.println("fileDown()");
 		script.println("setTimeout('history.back()',1000)");
 		script.println("</script>");
