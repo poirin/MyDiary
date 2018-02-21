@@ -24,16 +24,67 @@
 <div id="container">
 
 
-
+<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+	  <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+      </div>
+      <div class="modal-body">
+      	<div align="center" style="margin-left:10px; margin-top:20px">
+	      	<p>Using template design <button type="button" class="btn btn-default" style="margin:10px" onclick="location.href = 'picactivity.jsp'">ppt</button></p>
+	    </div>
+	    <div align="center" style="margin-left:10px; margin-top:20px">
+	      	<p>Using your own design<button type="button" class="btn btn-default" style="margin:10px" onclick="location.href = 'pdfedit.jsp'">pdf</button></p>
+	    </div>
+      </div>
+    </div>
+  </div>
+</div>
 	
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+      </div>
+      <div class="modal-body">
+        		<form action="jsp/activityAddAction.jsp" method="post" class="pop-conts" id="frm">
+					<!--content //-->
+					  <div class="form-group">
+			            <p>Activity type:</p>
+			            <input type="text" class="form-control" id="type" maxlength="24" name="actType" onblur="inputLengthCheck(this);" autofocus required>
+			          </div>
+			          
+					  <div class="form-group">
+			            <p>Activity name:</p>
+			            <input type="text" class="form-control" id="actname" maxlength="19" name="actName" onblur="inputLengthCheck(this);" required>
+			          </div>
+
+					  <div class="form-group">
+			            <p>Activity summary:</p>
+			            <textarea class="form-control" id="actsum" maxlength="100" name="actSummary" onblur="inputLengthCheck(this);" required></textarea>
+			          </div>
+					<!--// content-->
+				</form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" onclick="document.getElementById('frm').submit();">Save</button>
+      </div>
+    </div>
+  </div>
+</div>
 	
 <header class="header-login-signup">
 	<div class="header-limiter">
 		<h1><a href="main.jsp">MY<span>DIARY</span></a></h1>
 
 		<nav>
-			<a href="picactivity.jsp" >Make portfolio</a>
-			<a href="#layer2" class="selected">Add activity</a>
+			<a href="#" data-toggle="modal" data-target=".bs-example-modal-sm">Make portfolio</a>
+			<a href="#layer2" class="selected" data-toggle="modal" data-target="#myModal">Add activity</a>
 		</nav>
 
 		<ul>
@@ -143,28 +194,6 @@
 			<%
 				}
 			%>
-	</div>
-	
-	<div class="dim-layer">
-		<div class="dimBg"></div>
-		<div id="layer2" class="pop-layer">
-			<div class="pop-container">
-				<form action="jsp/activityAddAction.jsp" method="post" class="pop-conts" id="frm">
-					<!--content //-->
-					<p class="ctxt mb20">활동 종류</p>
-					<input maxlength="24" type= "text" name="actType" onblur="inputLengthCheck(this);" autofocus required>
-					<p class="ctxt mb20">활동 이름</p>
-					<input maxlength="19" type= "text" name="actName" onblur="inputLengthCheck(this);" required>
-					<p class="ctxt mb20">활동 요약</p>
-					<input maxlength="100" type= "text" name="actSummary" onblur="inputLengthCheck(this);" required>
-					<div class="btn-r">
-						<a href="#"  style="text-decoration:none" class="btn-layerClose">Close</a>
-						<a href="#"  style="text-decoration:none" onclick="document.getElementById('frm').submit();" class="btn-layerAdd">Add</a>
-					</div>
-					<!--// content-->
-				</form>
-			</div>
-		</div>
 	</div>
 
 	<script src="js/index.js?v=2"></script>
