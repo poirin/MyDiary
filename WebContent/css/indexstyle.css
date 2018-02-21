@@ -69,12 +69,12 @@
     transition: all 0.3 ease;
     cursor: pointer;
   }
-  .login .register {
+   .register {
     margin: 15px 0 0;
     color: #b3b3b3;
     font-size: 12px;
   }
-  .login .register a 
+   .register a 
   {
     color: #EF3B3A;
     text-decoration: none;

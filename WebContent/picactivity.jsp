@@ -17,6 +17,7 @@
 	<link rel="stylesheet" href="css/frame.css?v=1">
 	<link rel="stylesheet" href="css/search.css?v=1">
 	<link rel="stylesheet" href="css/aside.css?v=1">
+	<link rel="stylesheet" href="css/indexstyle.css?v=1">
 	<script src="http://code.jquery.com/jquery-latest.js"></script>
 	<title>My diary</title>
 </head>
@@ -108,8 +109,10 @@
 	</div>
 </div>
 	<div id="main_section">
-	<div>
-		<a href="pdfedit.jsp">own design</a>
+	<div style="margin-top:30px; margin-left:30px">
+		<p class="register">"Want another design? "
+			<a href="pdfedit.jsp">Create your own design!</a>
+		</p>
 	</div>
 		<form id="radioform" method="get" action="selactivity.jsp" name="radform">
 		<div id="activity_form">
