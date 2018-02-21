@@ -102,8 +102,9 @@
 		window.editor = editor;
     </script>
     
-    <form method="post" action="jsp/makeHTML.jsp" name="viewhtml">
+    <form method="post" action="selactivity.jsp" name="viewhtml">
 		<input type = "hidden" name="htmlcode"/>
+		<input type = "hidden" name="maketype" value="pdf"/> <!-- Make Type : pdf selactivity's argument  -->
 	</form>
     </div>
 
@@ -114,7 +115,6 @@
 <script>
 
 	$('#download').click(function() {
-	
 		document.getElementsByName("htmlcode")[0].value = "<!DOCTYPE html><style>"+editor.getCss()+"</style><body>"+editor.getHtml()+"</body>";
 		document.forms['viewhtml'].submit();
 		

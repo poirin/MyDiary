@@ -3,6 +3,7 @@
 <%@ page import="activity.ActivityDAO"%>
 <%@ page import="activity.Activity"%>
 <%@ page import="java.util.ArrayList"%>
+<% request.setCharacterEncoding("UTF-8"); %>
 <!doctype html>
 <html lang = "ko">
 <head>
@@ -27,7 +28,21 @@
 		<h1><a href="main.jsp">MY<span>DIARY</span></a></h1>
 
 		<nav>
-			<a href="#" onclick="document.forms['chkform'].submit();">Portfolio download</a>
+			<%
+				String makeType = request.getParameter("maketype");
+				if(makeType.equals("pdf"))
+				{
+			%>
+					<a href="#" onclick="document.forms['chkform'].submit();">Portfolio download</a>
+			<%  
+				}
+				else
+				{
+			%>
+					<a href="#" onclick="document.forms['chkform'].submit();">Portfolio download</a>
+			<%  }
+			%>
+			
 		</nav>
 
 		<ul>
@@ -92,7 +107,21 @@
 </div>
 
 	<div id="main_section">
-		<form id="checkform" method="get" action="jsp/makePPT.jsp" name="chkform">
+	
+		<%
+			if(makeType.equals("pdf"))
+			{
+		%>
+			<form id="checkform" method="post" action="jsp/makeHTML.jsp" name="chkform">	
+		<% 
+			}
+			else
+			{
+		%>
+			<form id="checkform" method="get" action="jsp/makePPT.jsp" name="chkform">
+		<%
+			}
+		%>
 			<div id="activity_form">
 				<%
 					for(int i=0; i<list.size(); i++) {
@@ -109,8 +138,27 @@
 					}
 				%>
 			</div>
-			<input type="hidden" name="select" value="<%=request.getParameter("select")%>">
-		</form>
+			
+			<%
+				if(makeType.equals("pdf"))
+				{
+					String htmlcode = request.getParameter("htmlcode");
+					htmlcode = htmlcode.replaceAll("\"","&quot;"); 
+					
+			%>
+					<input type="text" name="htmlcode" value = "<%=htmlcode%>">
+			
+			<%
+				}
+				else
+				{
+			%>
+					<input type="hidden" name="select" value="<%=request.getParameter("select")%>">			
+			<%  
+				}
+			%>
+			
+			</form>
 	</div>
 	
 	<div class="dim-layer">

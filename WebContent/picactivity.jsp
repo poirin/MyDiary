@@ -113,6 +113,8 @@
 				}
 			%>
 		</div>
+		<input type = "hidden" name="maketype" value="ppt"/> <!-- Make Type : ppt selactivity's argument  -->
+	
 		</form>
 	</div>
 

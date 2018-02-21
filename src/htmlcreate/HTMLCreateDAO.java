@@ -1,4 +1,4 @@
-package htmlcreate;
+ï»¿package htmlcreate;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -28,23 +28,32 @@ public class HTMLCreateDAO {
 		}
 	}
 	
-	public int makeHTML(String userID, String htmlCode) {	
+	public int makeHTML(String userID, String[] chk, String htmlCode) {	
 		String SQL = "SELECT * FROM activity WHERE userID=?";
+		if(chk==null) 
+		{
+			chk = new String[1]; 
+			chk[0] = "99999999";
+		}
 		try {
 			pstmt = conn.prepareStatement(SQL);
 			pstmt.setString(1, userID);
 			rs = pstmt.executeQuery();
 
-			String totalHtml = "<center>"+userID + "ÀÇ Æ÷Æ®Æú¸®¿À</center><br><br>";
-			while(rs.next()) {
+			String totalHtml = "<center>"+userID + "ì˜ í¬íŠ¸í´ë¦¬ì˜¤</center><br><br>";
+			
+			int cnt = 0; // For check count
+			while(rs.next()&&cnt<chk.length) {
+				if(rs.getInt("actNum")!=Integer.parseInt(chk[cnt])) continue;
+				System.out.println(chk[cnt]);
 				String changeCode = htmlCode;
 				changeCode = changeCode.replaceAll("<div class=\"activityName\">.*?</div>","<div class=\"activityName\">"+rs.getString("actName")+"</div>");
-				changeCode = changeCode.replaceAll("<div class=\"activityType\">.*?</div>","<div class=\"activityType\">"+"È°µ¿Á¾·ù : " +rs.getString("actType")+"</div>");
+				changeCode = changeCode.replaceAll("<div class=\"activityType\">.*?</div>","<div class=\"activityType\">"+"í™œë™ì¢…ë¥˜ : " +rs.getString("actType")+"</div>");
 				changeCode = changeCode.replaceAll("<div class=\"summaryDescription\">.*?</div>","<div class=\"summaryDescription\">"+rs.getString("actSummary")+"</div>");
 				
 				if(rs.getString("startDate")!=null&&rs.getString("endDate")!=null)
 				{
-					changeCode = changeCode.replaceAll("<div class=\"activityDate\">.*?</div>","<div class=\"activityDate\">"+"È°µ¿ÀÏÀÚ : "+rs.getString("startDate")+" ~ "+ rs.getString("endDate")+ "</div>");
+					changeCode = changeCode.replaceAll("<div class=\"activityDate\">.*?</div>","<div class=\"activityDate\">"+"í™œë™ì¼ì : "+rs.getString("startDate")+" ~ "+ rs.getString("endDate")+ "</div>");
 				
 				}
 				else
@@ -53,14 +62,14 @@ public class HTMLCreateDAO {
 				}
 				
 				
-				if(rs.getString("actStatus")!=null&&!rs.getString("actStatus").equals("¼±ÅÃ"))
+				if(rs.getString("actStatus")!=null&&!rs.getString("actStatus").equals("ì„ íƒ"))
 				{
-					if(rs.getString("actStatus").equals("¿Ï·áµÊ"))
-						changeCode = changeCode.replaceAll("<div class=\"activityStatus\">.*?</div>","<div class=\"activityStatus\">¿Ï·áµÈ  " + rs.getString("actType")+"</div>");
-					if(rs.getString("actStatus").equals("ÁøÇàÁß"))
-						changeCode = changeCode.replaceAll("<div class=\"activityStatus\">.*?</div>","<div class=\"activityStatus\">ÁøÇàÁßÀÎ  " + rs.getString("actType")+"</div>");
-					if(rs.getString("actStatus").equals("¿¹Á¤"))
-						changeCode = changeCode.replaceAll("<div class=\"activityStatus\">.*?</div>","<div class=\"activityStatus\">¿¹Á¤µÈ  " + rs.getString("actType")+"</div>");
+					if(rs.getString("actStatus").equals("ì™„ë£Œë¨"))
+						changeCode = changeCode.replaceAll("<div class=\"activityStatus\">.*?</div>","<div class=\"activityStatus\">ì™„ë£Œëœ  " + rs.getString("actType")+"</div>");
+					if(rs.getString("actStatus").equals("ì§„í–‰ì¤‘"))
+						changeCode = changeCode.replaceAll("<div class=\"activityStatus\">.*?</div>","<div class=\"activityStatus\">ì§„í–‰ì¤‘ì¸  " + rs.getString("actType")+"</div>");
+					if(rs.getString("actStatus").equals("ì˜ˆì •"))
+						changeCode = changeCode.replaceAll("<div class=\"activityStatus\">.*?</div>","<div class=\"activityStatus\">ì˜ˆì •ëœ  " + rs.getString("actType")+"</div>");
 				}
 				else
 				{
@@ -70,7 +79,7 @@ public class HTMLCreateDAO {
 				if(rs.getString("actContent")!=null)
 				{
 					changeCode = changeCode.replaceAll("<div class=\"contentDescription\">.*?</div>","<div class=\"contentDescription\">"+rs.getString("actContent")+ "</div>");
-				}	
+				}
 				else
 				{
 					changeCode = changeCode.replaceAll("<div class=\"activityContent\">.*?</div>","");
@@ -88,11 +97,11 @@ public class HTMLCreateDAO {
 				}
 				
 				totalHtml = totalHtml + changeCode+"<br>";
+				cnt++;
 			}
 			String path = HTMLCreateDAO.class.getResource("").getPath()+"../../../";
-			//File file = new File(path+"Portfolio.html","UTF8"); 
 			BufferedWriter uniOutput = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(path+"Portfolio.html"),"UTF8"));
-	
+
 			uniOutput.write(totalHtml);
 			uniOutput.close();
 			
@@ -101,6 +110,4 @@ public class HTMLCreateDAO {
 		}
 		return 0;
 	}
-	
-	
 }
