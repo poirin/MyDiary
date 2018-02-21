@@ -17,6 +17,7 @@
 	<link rel="stylesheet" href="css/frame.css?v=1">
 	<link rel="stylesheet" href="css/search.css?v=1">
 	<link rel="stylesheet" href="css/aside.css?v=1">
+	<link rel="stylesheet" href="css/indexstyle.css?v=1">
 	<script src="http://code.jquery.com/jquery-latest.js"></script>
 	<title>My diary</title>
 </head>
@@ -53,8 +54,27 @@
 				list = activityDAO.getList((String) session.getAttribute("userID"));
 				ArrayList<String> yearList = activityDAO.getYear((String) session.getAttribute("userID"));
 				for(int i=0; i<yearList.size(); i++) {
+					int yearsize=0;
+					for(int j=0; j<list.size(); j++) {
+						int start,end;
+						if(list.get(j).getStartDate()!=null) 
+							start = Integer.parseInt(list.get(j).getStartDate().substring(0,4));
+						else 
+							start = 0;
+						
+						if(list.get(j).getEndDate()!=null) 
+							end = Integer.parseInt(list.get(j).getEndDate().substring(0,4));
+						else 
+							end = 0;
+						
+						int thisyear = Integer.parseInt(yearList.get(i));
+						if(start==thisyear || end==thisyear || (start!=0 && end!=0 && thisyear<end && thisyear>start))
+						{	
+							yearsize++;
+						}
+					}
 			%>
-				<li class="menu"> <a href="#"><%=yearList.get(i) %><span class="badge"><%=list.size() %></span></a>
+				<li class="menu"> <a href="#"><%=yearList.get(i) %><span class="badge"><%=yearsize %></span></a>
 					<ul class="yearlist">
 					<%
 						for(int j=0; j<list.size(); j++) {
@@ -89,8 +109,10 @@
 	</div>
 </div>
 	<div id="main_section">
-	<div>
-		<a href="pdfedit.jsp">own design</a>
+	<div style="margin-top:30px; margin-left:30px">
+		<p class="register">"Want another design? "
+			<a href="pdfedit.jsp">Create your own design!</a>
+		</p>
 	</div>
 		<form id="radioform" method="get" action="selactivity.jsp" name="radform">
 		<div id="activity_form">

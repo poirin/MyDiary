@@ -113,7 +113,6 @@
     <script src="js/bootstrap.min.js"></script>
 </div>
 <script>
-
 	$('#download').click(function() {
 		document.getElementsByName("htmlcode")[0].value = "<!DOCTYPE html><style>"+editor.getCss()+"</style><body>"+editor.getHtml()+"</body>";
 		document.forms['viewhtml'].submit();

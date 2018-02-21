@@ -70,8 +70,27 @@
 				list = activityDAO.getList((String) session.getAttribute("userID"));
 				ArrayList<String> yearList = activityDAO.getYear((String) session.getAttribute("userID"));
 				for(int i=0; i<yearList.size(); i++) {
+					int yearsize=0;
+					for(int j=0; j<list.size(); j++) {
+						int start,end;
+						if(list.get(j).getStartDate()!=null) 
+							start = Integer.parseInt(list.get(j).getStartDate().substring(0,4));
+						else 
+							start = 0;
+						
+						if(list.get(j).getEndDate()!=null) 
+							end = Integer.parseInt(list.get(j).getEndDate().substring(0,4));
+						else 
+							end = 0;
+						
+						int thisyear = Integer.parseInt(yearList.get(i));
+						if(start==thisyear || end==thisyear || (start!=0 && end!=0 && thisyear<end && thisyear>start))
+						{	
+							yearsize++;
+						}
+					}
 			%>
-				<li class="menu"> <a href="#"><%=yearList.get(i) %><span class="badge"><%=list.size() %></span></a>
+				<li class="menu"> <a href="#"><%=yearList.get(i) %><span class="badge"><%=yearsize %></span></a>
 					<ul class="yearlist">
 					<%
 						for(int j=0; j<list.size(); j++) {
