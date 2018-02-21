@@ -22,16 +22,6 @@
 	<script>
 
   	function canvas(){
-  	/*html2canvas(document.body, {
-          onrendered: function(canvas) {         
-              var imgData = canvas.toDataURL(
-                  'image/png');              
-              var doc = new jsPDF('p', 'mm');
-              doc.addImage(imgData, 'PNG', 10, 10);
-              doc.save('Portfolio.pdf');
-          }
-      });
-  	}*/
 		html2canvas(document.body, {
 			onrendered: function(canvas) 
 			{

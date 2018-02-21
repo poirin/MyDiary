@@ -3,6 +3,7 @@
 <%@ page import="htmlcreate.HTMLCreateDAO" %>
 <%@ page import="java.io.PrintWriter"%>
 <% request.setCharacterEncoding("UTF-8"); %>
+
 <jsp:useBean id="htmlcreate" class="user.User" scope="page" />
 <jsp:setProperty name="htmlcreate" property="userID" />
 <!DOCTYPE html">
@@ -14,9 +15,10 @@
 <body>
 	<iframe width=0 height=0 name="hiddenframe" style="display:none;"></iframe>
 	<% 
-		String htmlcode = request.getParameter("htmlcode"); 
+		String[] chk = request.getParameterValues("check");
+		String htmlcode = request.getParameter("htmlcode");
 		HTMLCreateDAO htmlCreateDAO = new HTMLCreateDAO();
-		int result = htmlCreateDAO.makeHTML((String)session.getAttribute("userID"), htmlcode);
+		int result = htmlCreateDAO.makeHTML((String)session.getAttribute("userID"), chk, htmlcode);
 		
 		PrintWriter script = response.getWriter();
 		script.println("<script>");
