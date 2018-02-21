@@ -1,4 +1,10 @@
 ﻿<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page import="htmlcreate.HTMLCreateDAO" %>
+<%@ page import="java.io.PrintWriter"%>
+<% request.setCharacterEncoding("UTF-8"); %>
+<jsp:useBean id="htmlcreate" class="user.User" scope="page" />
+<jsp:setProperty name="htmlcreate" property="userID" />
+
 <!doctype html>
 <html lang = "ko">
 <head>
@@ -23,7 +29,6 @@
    	<script src="https://unpkg.com/jspdf@latest/dist/jspdf.min.js"></script>
 	<style>
 	#main_section {
-
 	   width:100%;
 	   height:100%;
 	}
@@ -40,7 +45,9 @@
 		<h1><a href="main.jsp">MY<span>DIARY</span></a></h1>
 
 		<nav>
-			<a href="#" onclick="document.forms['viewhtml'].submit();">Download HTML</a>
+			<!-- <a href="#" id ="download">Download HTML</a>-->
+		
+			<a href="#" id = "download">Download HTML</a>
 		</nav>
 
 		<ul>
@@ -55,8 +62,8 @@
 	
     	<div id="gjs" style="height:0px; overflow:hidden">
     	
-		<div class="activityType">활동종류</div>
 		<div class="activityName">활동이름</div>
+		<div class="activityType">활동종류</div>
 		<div class="activityDate">활동일자</div>
 		<div class="activitySummary">활동요약</div>
 		<div class="summaryDescription">활동요약Description</div>
@@ -87,40 +94,30 @@
 				storageManager:{autoload: 0},
  				container : '#gjs',
 				fromElement: true,
-
 				plugins: ['gjs-blocks-basic'],
 				pluginsOpts: {
 					'gjs-blocks-basic': {}
 				}
 			});
-
 		window.editor = editor;
     </script>
+    
+    <form method="post" action="jsp/makeHTML.jsp" name="viewhtml">
+		<input type = "hidden" name="htmlcode"/>
+	</form>
     </div>
-
 
 	<script src="js/index.js?v=2"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
 </div>
-<form method="GET" action = "jsp/makeHTML.jsp" name="viewhtml">
-	<input type = "text" id ="htmlcode" name="htmlcsscode" value="">
-</form>
 <script>
-	document.getElementById('htmlcode').value = "<!DOCTYPE html><style>"+editor.getCss()+"</style><body>"+editor.getHtml()+"</body>";
+	$('#download').click(function() {
+	
+		document.getElementsByName("htmlcode")[0].value = "<!DOCTYPE html><style>"+editor.getCss()+"</style><body>"+editor.getHtml()+"</body>";
+		document.forms['viewhtml'].submit();
+		
+	});
 </script>
-<script>
-    $('#download').click(function() {       
-        html2canvas(document.body, {
-            onrendered: function(canvas) {         
-                var imgData = canvas.toDataURL(
-                    'image/png');              
-                var doc = new jsPDF('p', 'mm');
-                doc.addImage(imgData, 'PNG', 10, 10);
-                doc.save('sample-file.pdf');
-            }
-        });
-    });
-    </script>
 </body>
 </html>
