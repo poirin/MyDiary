@@ -56,8 +56,6 @@
 
 	</div>
 </header>
-
-
 	<div id="main_section">
 	
     	<div id="gjs" style="height:0px; overflow:hidden">
