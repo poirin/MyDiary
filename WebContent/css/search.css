@@ -9,10 +9,11 @@ border-radius:0 5px 5px 0;
 -o-border-radius:0 5px 5px 0;
 border:0 none;
 font-weight:bold;
-margin-top:2.5%;
+margin-top:2%;
 }
  
 #search-box {
+color:black;
 background: #eee;
 padding:10px;
  border-radius:5px 0 0 5px;
@@ -20,6 +21,5 @@ padding:10px;
 -webkit-border-radius:5px 0 0 5px;
 -o-border-radius:5px 0 0 5px;
 border:0 none;
-width:190px;
-
+width:205px;
 }

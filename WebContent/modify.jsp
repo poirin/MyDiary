@@ -15,7 +15,7 @@
 	<link rel="stylesheet" href="css/inputlayout.css?v=1">
 	<link rel="stylesheet" href="css/form.css?v=1">
 	<link rel="stylesheet" href="css/mainheader.css?v=1">
-	<link rel="stylesheet" href="css/search.css?v=1">
+	<link rel="stylesheet" href="css/search.css?v=2">
 	<link rel="stylesheet" href="css/aside.css?v=1">
 	<script src="http://code.jquery.com/jquery-latest.js"></script>
 	<title>My diary</title>
