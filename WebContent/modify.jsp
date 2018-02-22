@@ -124,6 +124,7 @@
 		Activity activity = new ActivityDAO().getActivity(userID,actNum);
 	%>
 	<div id="main_section">
+	<div style="margin-top:50px">
 		<form action="jsp/modifyAction.jsp?actNum=<%=actNum%>" method="post" id="modify_form" class="form-horizontal ">
 		
 			<div class="form-group">
@@ -197,6 +198,7 @@
 				<a href="#" onclick="document.getElementById('modify_form').submit();" class="btn btn-default">수정</a>
 			</div>
 		</form>
+	</div>
 	</div>
 	
 	<div class="dim-layer">
