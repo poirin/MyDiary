@@ -45,7 +45,6 @@ public class HTMLCreateDAO {
 			int cnt = 0; // For check count
 			while(rs.next()&&cnt<chk.length) {
 				if(rs.getInt("actNum")!=Integer.parseInt(chk[cnt])) continue;
-				System.out.println(chk[cnt]);
 				String changeCode = htmlCode;
 				changeCode = changeCode.replaceAll("<div class=\"activityName\">.*?</div>","<div class=\"activityName\">"+rs.getString("actName")+"</div>");
 				changeCode = changeCode.replaceAll("<div class=\"activityType\">.*?</div>","<div class=\"activityType\">"+"활동종류 : " +rs.getString("actType")+"</div>");
