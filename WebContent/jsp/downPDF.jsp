@@ -18,7 +18,9 @@
 
 	</script>
 <body>
-   	<div id="header" style="width:800px;"></div>
+
+   	<div id="header" style="width:800px;word-break:break-all;">
+   	</div>
 	<script>
 
   	function canvas(){
@@ -40,7 +42,6 @@
 					doc.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
 					heightLeft -= pageHeight;
 				}
-				//var width = doc.internal.pageSize.width;
 				doc.save('sample-file.pdf');
 				
 			}
