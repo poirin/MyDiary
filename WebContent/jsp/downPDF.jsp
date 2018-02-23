@@ -10,7 +10,11 @@
 	<script src="http://code.jquery.com/jquery-latest.js"></script>
 	<script src="../js/html2canvas.min.js"></script>
    	<script src="https://unpkg.com/jspdf@latest/dist/jspdf.min.js"></script>
-
+	<style>
+	#port{
+		 height:303.8mm;
+	}
+	</style>
 	<script type="text/javascript">
 		$(document).ready(function(){
 			$("#header").load("../Portfolio.html")
@@ -19,7 +23,8 @@
 	</script>
 <body>
 
-   	<div id="header" style="width:800px;word-break:break-all;">
+
+   	<div id="header" style="width:812px;word-break:break-all;">
    	</div>
 	<script>
 
@@ -42,7 +47,7 @@
 					doc.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
 					heightLeft -= pageHeight;
 				}
-				doc.save('sample-file.pdf');
+				doc.save('Portfolio.pdf');
 				
 			}
 		});

@@ -165,7 +165,7 @@
 					htmlcode = htmlcode.replaceAll("\"","&quot;"); 
 					
 			%>
-					<input type="text" name="htmlcode" value = "<%=htmlcode%>">
+					<input type="hidden" name="htmlcode" value = "<%=htmlcode%>">
 			
 			<%
 				}

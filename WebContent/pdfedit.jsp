@@ -45,9 +45,7 @@
 		<h1><a href="main.jsp">MY<span>DIARY</span></a></h1>
 
 		<nav>
-			<!-- <a href="#" id ="download">Download HTML</a>-->
-		
-			<a href="#" id = "download">Download HTML</a>
+			<a href="#" id = "download">Select activity</a>
 		</nav>
 
 		<ul>

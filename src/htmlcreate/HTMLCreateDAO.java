@@ -40,12 +40,13 @@ public class HTMLCreateDAO {
 			pstmt.setString(1, userID);
 			rs = pstmt.executeQuery();
 
-			String totalHtml = "<center>"+userID + "의 포트폴리오</center><br><br>";
+			String totalHtml = "";
 			
 			int cnt = 0; // For check count
 			while(rs.next()&&cnt<chk.length) {
 				if(rs.getInt("actNum")!=Integer.parseInt(chk[cnt])) continue;
 				String changeCode = htmlCode;
+				totalHtml = totalHtml + "<div id=\"port\">";
 				changeCode = changeCode.replaceAll("<div class=\"activityName\">.*?</div>","<div class=\"activityName\">"+rs.getString("actName")+"</div>");
 				changeCode = changeCode.replaceAll("<div class=\"activityType\">.*?</div>","<div class=\"activityType\">"+"활동종류 : " +rs.getString("actType")+"</div>");
 				changeCode = changeCode.replaceAll("<div class=\"summaryDescription\">.*?</div>","<div class=\"summaryDescription\">"+rs.getString("actSummary")+"</div>");
@@ -95,7 +96,7 @@ public class HTMLCreateDAO {
 					changeCode = changeCode.replaceAll("<div class=\"resultDescription\">.*?</div>","");
 				}
 				
-				totalHtml = totalHtml + changeCode+"<br>";
+				totalHtml = totalHtml + changeCode+"</div>";
 				cnt++;
 			}
 			String path = HTMLCreateDAO.class.getResource("").getPath()+"../../../";
