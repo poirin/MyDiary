@@ -14,13 +14,23 @@ My Diary is a web service that helps users manage their portfolio. Users can acc
 
 # Features
 - Add activity<br>
-- Modify activity<br>
 - Remove activity<br>
-- Export portfolio(PPT&&PDF)<br>
-- Edit portfolio(PDF)<br>
+![AddRemove](https://github.com/poirin/doc/blob/master/mydiary/activityadddelete.gif)
+
+- Modify activity<br>
+![Modify](https://github.com/poirin/doc/blob/master/mydiary/activitymodify.gif)
+
 - Search activity<br>
+![Search](https://github.com/poirin/doc/blob/master/mydiary/activitysearch.gif)
+
+- Export portfolio(PPT)<br>
+- Select portfolio PPT design<br>
+![PPT](https://github.com/poirin/doc/blob/master/mydiary/ppt.gif)
+
+- Edit and Export portfolio(PDF)<br>
+![PDF](https://github.com/poirin/doc/blob/master/mydiary/pdf.gif)
+
 - See activity list at a glance<br>
-- Select portfolio design
 
 # Development Environment
 - Language : Java, Javascript, jsp, html, css, sql<br>
