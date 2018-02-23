@@ -16,7 +16,7 @@
 	<link rel="stylesheet" href="css/button.css?v=1">
 	<link rel="stylesheet" href="css/form.css?v=2">
 	<link rel="stylesheet" href="css/mainheader.css?v=1">
-	<link rel="stylesheet" href="css/search.css">
+	<link rel="stylesheet" href="css/search.css?v=2">
 	<link rel="stylesheet" href="css/aside.css">
 	<title>My diary</title>
 </head>
@@ -120,17 +120,19 @@
 		<aside>
 			<ul>
 			<%
+				ArrayList<Activity> list2;
+				list2 = activityDAO.getList((String) session.getAttribute("userID"));
 				for(int i=0; i<yearList.size(); i++) {
 					int yearsize=0;
-					for(int j=0; j<list.size(); j++) {
+					for(int j=0; j<list2.size(); j++) {
 						int start,end;
-						if(list.get(j).getStartDate()!=null) 
-							start = Integer.parseInt(list.get(j).getStartDate().substring(0,4));
+						if(list2.get(j).getStartDate()!=null) 
+							start = Integer.parseInt(list2.get(j).getStartDate().substring(0,4));
 						else 
 							start = 0;
 						
-						if(list.get(j).getEndDate()!=null) 
-							end = Integer.parseInt(list.get(j).getEndDate().substring(0,4));
+						if(list2.get(j).getEndDate()!=null) 
+							end = Integer.parseInt(list2.get(j).getEndDate().substring(0,4));
 						else 
 							end = 0;
 						
@@ -177,6 +179,7 @@
 </div>
 	
 	<div id="main_section">	
+		<div style="margin:30px;">
 			<%
 				for(int i=0; i<list.size(); i++) {
 			%>
@@ -194,6 +197,7 @@
 			<%
 				}
 			%>
+		</div>
 	</div>
 
 	<script src="js/index.js?v=2"></script>
