@@ -5,21 +5,19 @@ My Diary is a web service that helps users manage their portfolio. Users can acc
 *Website : http://poirin.cafe24.com/
 
 # Features
-- Add activity
-- Remove activity<br>
+- <a href="https://github.com/poirin/doc/blob/master/mydiary/activityadddelete.gif">Add/Remove activity</a><br>
 ![AddRemove](https://github.com/poirin/doc/blob/master/mydiary/activityadddelete.gif)
 
-- Modify activity<br>
+- <a href="https://github.com/poirin/doc/blob/master/mydiary/activitymodify.gif">Modify activity</a><br>
 ![Modify](https://github.com/poirin/doc/blob/master/mydiary/activitymodify.gif)
 
-- Search activity<br>
+- <a href="https://github.com/poirin/doc/blob/master/mydiary/activitysearch.gif">Search activity</a><br>
 ![Search](https://github.com/poirin/doc/blob/master/mydiary/activitysearch.gif)
 
-- Export portfolio(PPT)
-- Select portfolio PPT design<br>
+- <a href="https://github.com/poirin/doc/blob/master/mydiary/ppt.gif">Select template PPT design / Export portfolio</a><br>
 ![PPT](https://github.com/poirin/doc/blob/master/mydiary/ppt.gif)
 
-- Edit and Export portfolio(PDF)<br>
+- <a href="https://github.com/poirin/doc/blob/master/mydiary/pdf.gif">Edit and Export portfolio(PDF)</a><br>
 ![PDF](https://github.com/poirin/doc/blob/master/mydiary/pdf.gif)
 
 - See activity list at a glance<br>
