@@ -22,14 +22,16 @@ My Diary is a web service that helps users manage their portfolio. Users can rec
 
 - See activity list at a glance<br>
 
-# Development Environment
-- Language : Java, Javascript, jsp, html, css, sql<br>
-- Develop Environment : eclipse, mysql, JDK<br>
-- Server : Cafe24, Apache tomcat<br>
-- OS : Window10, Linux<br>
-- API : <a href = https://github.com/apache/poi>Apache POI (for PPT create)</a>, JDBC, <a href = https://github.com/artf/grapesjs>grape.js (for PDF edit)</a>, <a href = https://github.com/niklasvh/html2canvas>html2canvas (change html to pdf)</a>
+# Third party libraries
+<a href = https://github.com/apache/poi>Apache POI</a><br>
+<a href = https://github.com/artf/grapesjs>grape.js</a><br>
+<a href = https://github.com/niklasvh/html2canvas>html2canvas</a><br>
+<a href = https://github.com/twbs/bootstrap>bootstrap</a><br>
+<a href = https://github.com/jquery/jquery>jquery</a><br>
+<a href = https://github.com/jashkenas/underscore>underscore</a><br>
 
-# Future Plan
+# Todo
+- Provide various portfolio type
 - Add recommending PPT design template
 
 # LICENSE
