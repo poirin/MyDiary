@@ -23,12 +23,12 @@ My Diary is a web service that helps users manage their portfolio. Users can rec
 - See activity list at a glance<br>
 
 # Third party libraries
-<a href = https://github.com/apache/poi>Apache POI</a><br>
-<a href = https://github.com/artf/grapesjs>grape.js</a><br>
-<a href = https://github.com/niklasvh/html2canvas>html2canvas</a><br>
-<a href = https://github.com/twbs/bootstrap>bootstrap</a><br>
-<a href = https://github.com/jquery/jquery>jquery</a><br>
-<a href = https://github.com/jashkenas/underscore>underscore</a><br>
+- <a href = https://github.com/apache/poi>Apache POI</a><br>
+- <a href = https://github.com/artf/grapesjs>grape.js</a><br>
+- <a href = https://github.com/niklasvh/html2canvas>html2canvas</a><br>
+- <a href = https://github.com/twbs/bootstrap>bootstrap</a><br>
+- <a href = https://github.com/jquery/jquery>jquery</a><br>
+- <a href = https://github.com/jashkenas/underscore>underscore</a><br>
 
 # Todo
 - Provide various portfolio type
