@@ -28,7 +28,7 @@ My Diary is a web service that helps users manage their portfolio. Users can rec
 - <a href = https://github.com/niklasvh/html2canvas>html2canvas</a><br>
 - <a href = https://github.com/twbs/bootstrap>bootstrap</a><br>
 - <a href = https://github.com/jquery/jquery>jquery</a><br>
-- <a href = https://github.com/jashkenas/underscore>underscore</a><br>
+- <a href = https://github.com/MrRio/jsPDF>jspdf</a><br>
 
 # Todo
 - Provide various portfolio type
