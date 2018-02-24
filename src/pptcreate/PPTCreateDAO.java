@@ -1,4 +1,4 @@
-ï»¿package pptcreate;
+package pptcreate;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -58,7 +58,7 @@ public class PPTCreateDAO {
 			XSLFSlide slide1 = ppt.createSlide(titleLayout);
 			XSLFTextShape title1;
 			XSLFTextShape content1;
-			if(slide1.getPlaceholder(0).getText().equals("ë§ˆìŠ¤í„° ì œëª© ìŠ¤íƒ€ì¼ í¸ì§‘"))
+			if(slide1.getPlaceholder(0).getText().equals("¸¶½ºÅÍ Á¦¸ñ ½ºÅ¸ÀÏ ÆíÁı"))
 			{
 				title1 = slide1.getPlaceholder(0);
 				content1 = slide1.getPlaceholder(1);
@@ -68,7 +68,7 @@ public class PPTCreateDAO {
 				title1 = slide1.getPlaceholder(1);
 				content1 = slide1.getPlaceholder(0);
 			}
-			title1.setText(userID+"ì˜ í¬íŠ¸í´ë¦¬ì˜¤");
+			title1.setText(userID+"ÀÇ Æ÷Æ®Æú¸®¿À");
 			content1.setText(" ");
 		
 			int cnt = 0; // For check count
@@ -80,7 +80,7 @@ public class PPTCreateDAO {
 				XSLFSlide slide2 = ppt.createSlide(titleBodyLayout);
 				XSLFTextShape title2;
 				XSLFTextShape body2;
-				if(slide2.getPlaceholder(0).getText().equals("ë§ˆìŠ¤í„° ì œëª© ìŠ¤íƒ€ì¼ í¸ì§‘"))
+				if(slide2.getPlaceholder(0).getText().equals("¸¶½ºÅÍ Á¦¸ñ ½ºÅ¸ÀÏ ÆíÁı"))
 				{
 					title2 = slide2.getPlaceholder(0);
 					body2 = slide2.getPlaceholder(1);
@@ -94,23 +94,23 @@ public class PPTCreateDAO {
 				title2.setText(rs.getString("actName"));
 
 				body2.clearText(); // unset any existing text
-				body2.addNewTextParagraph().addNewTextRun().setText("í™œë™ ì¢…ë¥˜ : "+rs.getString("actType"));
+				body2.addNewTextParagraph().addNewTextRun().setText("È°µ¿ Á¾·ù : "+rs.getString("actType"));
 				body2.addNewTextParagraph().addNewTextRun().setText("");
-				body2.addNewTextParagraph().addNewTextRun().setText("í™œë™ ìš”ì•½ : "+rs.getString("actSummary"));
+				body2.addNewTextParagraph().addNewTextRun().setText("È°µ¿ ¿ä¾à : "+rs.getString("actSummary"));
 				body2.addNewTextParagraph().addNewTextRun().setText("");
 				if(rs.getString("startDate")!=null&&rs.getString("endDate")!=null)
 				{
-					body2.addNewTextParagraph().addNewTextRun().setText("í™œë™ ë‚ ì§œ : "+rs.getString("startDate") + " ~ "+ rs.getString("endDate"));
+					body2.addNewTextParagraph().addNewTextRun().setText("È°µ¿ ³¯Â¥ : "+rs.getString("startDate") + " ~ "+ rs.getString("endDate"));
 					body2.addNewTextParagraph().addNewTextRun().setText("");
 				}
-				if(rs.getString("actStatus")!=null&&!rs.getString("actStatus").equals("ì„ íƒ"))
+				if(rs.getString("actStatus")!=null&&!rs.getString("actStatus").equals("¼±ÅÃ"))
 				{
-					if(rs.getString("actStatus").equals("ì™„ë£Œë¨"))
-						body2.addNewTextParagraph().addNewTextRun().setText("ì™„ë£Œëœ " + rs.getString("actType"));
-					if(rs.getString("actStatus").equals("ì§„í–‰ì¤‘"))
-						body2.addNewTextParagraph().addNewTextRun().setText("ì§„í–‰ì¤‘ì¸ " + rs.getString("actType"));
-					if(rs.getString("actStatus").equals("ì˜ˆì •"))
-						body2.addNewTextParagraph().addNewTextRun().setText("ì˜ˆì •ëœ " + rs.getString("actType"));
+					if(rs.getString("actStatus").equals("¿Ï·áµÊ"))
+						body2.addNewTextParagraph().addNewTextRun().setText("¿Ï·áµÈ " + rs.getString("actType"));
+					if(rs.getString("actStatus").equals("ÁøÇàÁß"))
+						body2.addNewTextParagraph().addNewTextRun().setText("ÁøÇàÁßÀÎ " + rs.getString("actType"));
+					if(rs.getString("actStatus").equals("¿¹Á¤"))
+						body2.addNewTextParagraph().addNewTextRun().setText("¿¹Á¤µÈ " + rs.getString("actType"));
 					body2.addNewTextParagraph().addNewTextRun().setText("");
 				}
 				cnt++;

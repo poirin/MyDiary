@@ -1,4 +1,4 @@
-ï»¿package htmlcreate;
+package htmlcreate;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -48,12 +48,12 @@ public class HTMLCreateDAO {
 				String changeCode = htmlCode;
 				totalHtml = totalHtml + "<div id=\"port\">";
 				changeCode = changeCode.replaceAll("<div class=\"activityName\">.*?</div>","<div class=\"activityName\">"+rs.getString("actName")+"</div>");
-				changeCode = changeCode.replaceAll("<div class=\"activityType\">.*?</div>","<div class=\"activityType\">"+"í™œë™ì¢…ë¥˜ : " +rs.getString("actType")+"</div>");
+				changeCode = changeCode.replaceAll("<div class=\"activityType\">.*?</div>","<div class=\"activityType\">"+"È°µ¿Á¾·ù : " +rs.getString("actType")+"</div>");
 				changeCode = changeCode.replaceAll("<div class=\"summaryDescription\">.*?</div>","<div class=\"summaryDescription\">"+rs.getString("actSummary")+"</div>");
 				
 				if(rs.getString("startDate")!=null&&rs.getString("endDate")!=null)
 				{
-					changeCode = changeCode.replaceAll("<div class=\"activityDate\">.*?</div>","<div class=\"activityDate\">"+"í™œë™ì¼ì : "+rs.getString("startDate")+" ~ "+ rs.getString("endDate")+ "</div>");
+					changeCode = changeCode.replaceAll("<div class=\"activityDate\">.*?</div>","<div class=\"activityDate\">"+"È°µ¿ÀÏÀÚ : "+rs.getString("startDate")+" ~ "+ rs.getString("endDate")+ "</div>");
 				
 				}
 				else
@@ -62,14 +62,14 @@ public class HTMLCreateDAO {
 				}
 				
 				
-				if(rs.getString("actStatus")!=null&&!rs.getString("actStatus").equals("ì„ íƒ"))
+				if(rs.getString("actStatus")!=null&&!rs.getString("actStatus").equals("¼±ÅÃ"))
 				{
-					if(rs.getString("actStatus").equals("ì™„ë£Œë¨"))
-						changeCode = changeCode.replaceAll("<div class=\"activityStatus\">.*?</div>","<div class=\"activityStatus\">ì™„ë£Œëœ  " + rs.getString("actType")+"</div>");
-					if(rs.getString("actStatus").equals("ì§„í–‰ì¤‘"))
-						changeCode = changeCode.replaceAll("<div class=\"activityStatus\">.*?</div>","<div class=\"activityStatus\">ì§„í–‰ì¤‘ì¸  " + rs.getString("actType")+"</div>");
-					if(rs.getString("actStatus").equals("ì˜ˆì •"))
-						changeCode = changeCode.replaceAll("<div class=\"activityStatus\">.*?</div>","<div class=\"activityStatus\">ì˜ˆì •ëœ  " + rs.getString("actType")+"</div>");
+					if(rs.getString("actStatus").equals("¿Ï·áµÊ"))
+						changeCode = changeCode.replaceAll("<div class=\"activityStatus\">.*?</div>","<div class=\"activityStatus\">¿Ï·áµÈ  " + rs.getString("actType")+"</div>");
+					if(rs.getString("actStatus").equals("ÁøÇàÁß"))
+						changeCode = changeCode.replaceAll("<div class=\"activityStatus\">.*?</div>","<div class=\"activityStatus\">ÁøÇàÁßÀÎ  " + rs.getString("actType")+"</div>");
+					if(rs.getString("actStatus").equals("¿¹Á¤"))
+						changeCode = changeCode.replaceAll("<div class=\"activityStatus\">.*?</div>","<div class=\"activityStatus\">¿¹Á¤µÈ  " + rs.getString("actType")+"</div>");
 				}
 				else
 				{
