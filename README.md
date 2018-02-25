@@ -1,4 +1,4 @@
-# MyDiary
+# MyDiary [![Build Status](https://travis-ci.org/poirin/MyDiary.svg?branch=master)](https://travis-ci.org/poirin/MyDiary.svg?branch=master)
 
 My Diary is a web service that helps users manage their portfolio. Users can record, store and manage their various activities (competition, projects, service activities, etc..). The server generates a portfolio (PPT) based on activities and helps users to automatically create their own portfolios with the desired design. Also users can edit and make their own design of portfolio.
 
