@@ -24,12 +24,7 @@ public class ActivityDAO {
 			String dbURL = "jdbc:mysql://localhost:3306/bbs";
 			String dbID ="root";
 			String dbPassword ="root"; //please input password
-			/*
-			
-			String dbURL = "jdbc:mysql://localhost:3306/mydiary";
-			String dbID ="root";
-			String dbPassword ="dhfoswl1";
-			*/ 
+		
 			conn = DriverManager.getConnection(dbURL, dbID, dbPassword);
 					
 		}catch(Exception e) {
