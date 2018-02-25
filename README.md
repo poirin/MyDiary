@@ -54,6 +54,13 @@ actResult varchar(2000) DEFAULT NULL, actStatus varchar(30) DEFAULT NULL, PRIMAR
 - Provide various portfolio type
 - Add recommending PPT design template
 
+# Founders
+Kang Byeonggoo, <a href="kbg31tk@gmail.com">kbg31tk@gmail.com</a>, <a href="https://github.com/kbg2875">https://github.com/kbg2875</a><br>
+Kim Hyeongmin, <a href="poirin@naver.com">poirin@naver.com</a>, <a href="https://github.com/poirin">https://github.com/poirin</a>
+
+# Code of conduct
+<a href = "https://github.com/poirin/MyDiary/blob/master/CODE_OF_CONDUCT.md">CODE_OF_CONDUCT</a>
+
 # LICENSE
 MIT
 ```
