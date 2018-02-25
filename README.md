@@ -4,6 +4,26 @@ My Diary is a web service that helps users manage their portfolio. Users can rec
 
 *Website : http://poirin.cafe24.com/
 
+# How To Start
+
+1. ```$ git clone https://github.com/poirin/MyDiary```
+
+2. Excute MySQL and type as follows to create database and tables.
+```
+mysql> create database bbs;
+mysql> use bbs;
+mysql> CREATE TABLE user (userID varchar(20) NOT NULL, userPW varchar(20) NOT NULL, 
+userEmail varchar(40) NOT NULL, actNumber int(11) NOT NULL, PRIMARY KEY (userID));
+mysql> CREATE TABLE activity (userID varchar(20) NOT NULL, actNum int(11) NOT NULL, 
+actType varchar(50) NOT NULL, actName varchar(50) NOT NULL, startDate date DEFAULT NULL, 
+endDate date DEFAULT NULL, actSummary varchar(100) DEFAULT NULL, actContent varchar(2000) DEFAULT NULL, 
+actResult varchar(2000) DEFAULT NULL, actStatus varchar(30) DEFAULT NULL, PRIMARY KEY (userID,actNum));
+```
+
+3. Modify string variable dbID and dbPassword to your mysql id/password in code <a href = "https://github.com/poirin/MyDiary/blob/master/src/htmlcreate/HTMLCreateDAO.java">HTMLCreateDAO.java</a>, <a href = "https://github.com/poirin/MyDiary/blob/master/src/pptcreate/PPTCreateDAO.java">PPTCreateDAO.java</a>, <a href = "https://github.com/poirin/MyDiary/blob/master/src/user/UserDAO.java">UserDAO.java</a> and <a href = "https://github.com/poirin/MyDiary/blob/master/src/activity/ActivityDAO.java">ActivityDAO.java</a>
+
+4. ```$ mvn install```
+
 # Features
 - <a href="https://github.com/poirin/doc/blob/master/mydiary/activityadddelete.gif">Add/Remove activity</a><br>
 ![AddRemove](https://github.com/poirin/doc/blob/master/mydiary/activityadddelete.gif)
