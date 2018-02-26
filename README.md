@@ -1,4 +1,4 @@
-# MyDiary [![Build Status](https://travis-ci.org/poirin/MyDiary.svg?branch=master)](https://travis-ci.org/poirin/MyDiary.svg?branch=master) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+# MyDiary [![Build Status](https://travis-ci.org/poirin/MyDiary.svg?branch=master)](https://travis-ci.org/poirin/MyDiary.svg?branch=master) [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
 My Diary is a web service that helps users manage their portfolio. Users can record, store and manage their various activities (competition, projects, service activities, etc..). The server generates a portfolio (PPT) based on activities and helps users to automatically create their own portfolios with the desired design. Also users can edit and make their own design of portfolio.
 
@@ -62,27 +62,4 @@ actResult varchar(2000) DEFAULT NULL, actStatus varchar(30) DEFAULT NULL, PRIMAR
 <a href = "https://github.com/poirin/MyDiary/blob/master/CODE_OF_CONDUCT.md">CODE_OF_CONDUCT</a>
 
 # LICENSE
-MIT
-```
-MIT License
-
-Copyright (c) 2018 poirin
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-```
+GNU GENERAL PUBLIC LICENSE v3.0
