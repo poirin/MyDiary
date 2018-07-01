@@ -2,8 +2,6 @@
 
 My Diary is a web service that helps users manage their portfolio. Users can record, store and manage their various activities (competition, projects, service activities, etc..). The server generates a portfolio (PPT) based on activities and helps users to automatically create their own portfolios with the desired design. Also users can edit and make their own design of portfolio.
 
-*Website : http://poirin.cafe24.com/ (will be update)
-
 # How To Start
 
 1. ```$ git clone https://github.com/poirin/MyDiary```
